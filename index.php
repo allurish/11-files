@@ -26,6 +26,17 @@ if(!rename("mir.txt", "/var/www/alekseeva.net/folder/mir.txt"))
     echo "<h1>4. Ошибка перемещения файла</h1>";
 else echo "<h1>4. Файл успешно перемещён в новый каталог</h1>";
 
-if (!copy("/var/www/alekseeva.net/folder/mir.txt", "/var/www/alekseeva.net/folder/world.txt"))
+chdir('/var/www/alekseeva.net/folder');
+if (!copy("mir.txt", "world.txt"))
     echo "<h1>5. Ошибка копирования файла</h1>";
 else echo "<h1>5. Файл скопирован, проверь папку</h1>";
+
+$bSize = filesize("world.txt");
+$mbSize = $bSize / 1024 / 1024;
+$gbSize = $mbSize / 1024;
+echo "<h1>6. Размер файла в байтах: $bSize, 
+в мегабайтах: $mbSize, в гигабайтах: $gbSize</h1>";
+
+if (unlink("world.txt")) 
+    echo "<h1>7. Файл ворлд.тхт удалён</h1>";
+else echo "<h1>7. Ошибка при удалении файла ворлд.тхт</h1>";

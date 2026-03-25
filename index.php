@@ -32,5 +32,3 @@ else {
 
 foreach(glob("*.jpg") as $pic)
     echo basename($pic) . "<br>";
-
-

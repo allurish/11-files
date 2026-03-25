@@ -16,8 +16,8 @@ else {
 }
 
 if(rmdir("www"))
-    echo "<h1>2. Папка ввв успешно удалена</h1>";
-else echo "<h1>2. Ошибка при удалении папки ввв</h1>";
+    echo "<h1>3. Папка ввв успешно удалена</h1>";
+else echo "<h1>3. Ошибка при удалении папки ввв</h1>";
 
 $folders = ["topSecret", "myFolder", "kittens"];
 foreach ($folders as $f) {
@@ -29,5 +29,8 @@ else {
     else echo "<h2>Ошибка при создании папки $f</h1>";
 }
 }
+
+foreach(glob("*.jpg") as $pic)
+    echo basename($pic) . "<br>";
 
 

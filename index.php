@@ -21,3 +21,17 @@ try {
 } catch(DivisionByZeroError $ex) {
     echo "<h1>2. На ноль делить нельзя</h1>";
 }
+
+$capitals = ['Spain' => 'Madrid','Russia' => 'Moscow'];
+try {
+    $country = 'Spain';
+    if(isset($capitals[$country]) )
+        echo $country . " - " . $capitals[$country];
+    else throw new Exception("<h1>3. Данных о столице страны $country нет</h1>");
+    $country = 'Germany';
+    if(isset($capitals[$country]) )
+        echo $country . " - " . $capitals[$country];
+    else throw new Exception("<h1>3. Данных о столице страны $country нет</h1>");
+} catch(Exception $ex) {
+    echo $ex->getMessage();
+}

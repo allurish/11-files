@@ -60,7 +60,32 @@
     }
 
     $date = '2002-09-24';
-    echo '8. ' . $date . ' -> ' . date('d-m-Y', strtotime($date)) . '<br>';
+    echo '<br>8. ' . $date . ' -> ' . date('d-m-Y', strtotime($date)) . '<br>';
+ 
+    $date = date_create('2000-02-03');
+    echo '9.1. ' . date_format($date, 'Y.m.d') . ' + 2 дня = ';
+    date_modify($date, '+ 2 days');
+    echo date_format($date, 'Y.m.d') . '<br>';
+
+    $date = date_create('2000-02-03');
+    echo '9.2. ' . date_format($date, 'Y.m.d') . ' + 1 месяц 3 дня = ';
+    date_modify($date, '+ 1 month 3 days');
+    echo date_format($date, 'Y.m.d') . '<br>';
+
+    $date = date_create('2000-02-03');
+    echo '9.3. ' . date_format($date, 'Y.m.d') . ' + 1 год = ';
+    date_modify($date, '+ 1 year');
+    echo date_format($date, 'Y.m.d') . '<br>';
+
+    $date = date_create('2000-02-03');
+    echo '9.4. ' . date_format($date, 'Y.m.d') . ' - 3 дня = ';
+    date_modify($date, '- 3 days');
+    echo date_format($date, 'Y.m.d') . '<br>';
+
+    $now = time();
+    $newYear = mktime(0, 0, 0, 1, 1, date('Y') + 1);
+    $daysLeft = ceil(($newYear - $now) / (60 * 60 * 24));
+    echo "10. До Нового года осталось $daysLeft дней";
     ?>  
 </body>
 </html>

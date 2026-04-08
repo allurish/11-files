@@ -12,11 +12,15 @@ class Worker {
     function getName() { return $this->name; }
     function getAge() { return $this->age; }
     function setAge($newAge) {
-        if($newAge > 17) 
+        if($this->checkAge($newAge)) 
             $this->age = $newAge;
         else {
             echo "The worker cannot be below the age of 18.<br>";
         }
+    }
+    private function checkAge($age) {
+        if($age > 17) return true;
+        else return false;
     }
     function getSalary() { return $this->salary; }
     function getSalariesSum() { return self::$salariesSum; }

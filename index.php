@@ -33,10 +33,10 @@ class Page {
     }
 }
 
-class BlogPage extends Page {
+class CatBlogPage extends Page {
     
     public function __construct() {
-        $this->name = "blog";
+        $this->name = "catBlog";
         
         $this->template = '<div style="text-align: center; margin: 1rem 0 0.5rem;">
                 <h1 style="font-size: 2rem; color: #422f1e;">📌 Наши статьи о кошках</h1>
@@ -97,6 +97,14 @@ class BlogPage extends Page {
         🐾 Блог о жизни кошек. 2026 🐾
     </div>';
     }
+}
+class DogBlogPage extends Page {
+
+    public function __construct() {
+        $this->name = "catBlog";
+        
+        $this->template = '';
+}
 }
 ?>
 
@@ -368,22 +376,22 @@ body {
 <body>
 
     <h1>Вы кошатница или собачница?</h1>
-    <a href="?page=page" class="btn">Главная страница</a>
-    <a href="?page=blog" class="btn">Блог</a>
+    <a href="?page=catBlog" class="btn">Кошатница</a>
+    <a href="?page=dogBlog" class="btn">Собачница</a>
     <hr>
 
     <?php
     if (isset($_GET['page'])) {
         $pageValue = $_GET['page'];
         
-        if ($pageValue === 'blog') {
-            $blog = new BlogPage();
+        if ($pageValue === 'catBlog') {
+            $blog = new CatBlogPage();
             $blog->render();
-        } elseif ($pageValue === 'page') {
-            $page = new Page();
+        } elseif ($pageValue === 'dogBlog') {
+            $page = new DogBlogPage();
             $page->render();
         } else {
-            echo "<p style='color: red;'>Ошибка: страница '{$pageValue}' не найдена. Используйте 'page' или 'blog'.</p>";
+            echo "<p style='color: red;'>Ошибка: страница '{$pageValue}' не найдена. Используйте 'catBlog' или 'dogBlog'.</p>";
             }
     } else {
         $page = new Page();

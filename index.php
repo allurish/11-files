@@ -1,3 +1,8 @@
 <?php
 
-//laba 15
+//1
+
+abstract class Figure {
+    public $area, $color, $sides;
+    
+}

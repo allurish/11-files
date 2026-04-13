@@ -94,7 +94,7 @@ class CatBlogPage extends Page {
             </div>
 
     <div class="footer">
-        🐾 Блог о жизни кошек. 2026 🐾
+        🐾 Блог о жизни питомцев. 2026 🐾
     </div>';
     }
 }
@@ -156,7 +156,7 @@ class DogBlogPage extends Page {
             </div>
 
     <div class="footer">
-        🐾 Блог о жизни кошек. 2026 🐾
+        🐾 Блог о жизни питомцев. 2026 🐾
     </div>';
 }
 }

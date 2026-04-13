@@ -7,18 +7,23 @@ abstract class Figure {
     abstract public function infoAbout();
 };
 
-class Rectangle extends Figure {
+interface IFigure {
+    public function getArea();
+}
+
+class Rectangle extends Figure implements IFigure {
     public function infoAbout() {
         echo "rectangle<br>";
     }
 };
-class Triangle extends Figure {
+class Triangle extends Figure implements IFigure {
     public function infoAbout() {
         echo "triangle<br>";
     }
 };
-class Square extends Figure {
+class Square extends Figure implements IFigure {
     public function infoAbout() {
         echo "square<br>";
     }
 };
+

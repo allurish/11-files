@@ -19,7 +19,7 @@ class Rectangle extends Figure implements IFigure {
         $sides = 4;
     }
     public function infoAbout() {
-        echo "rectangle<br>";
+        echo "это класс прямоугольника у него $sides стороны<br>";
     }
     public function getArea() {
         return $this->a*$this->b;
@@ -34,7 +34,7 @@ class Triangle extends Figure implements IFigure {
         $sides = 3;
     }
     public function infoAbout() {
-        echo "triangle<br>";
+        echo "это класс треугольника у него $sides стороны<br>";
     }
     public function getArea() {
         $p = ($this->a+$this->b+$this->c)/2;
@@ -48,7 +48,7 @@ class Square extends Figure implements IFigure {
         $sides = 4;
     }
     public function infoAbout() {
-        echo "square<br>";
+        echo "это класс квадрата у него $sides стороны<br>";
     }
     public function getArea() {
         return $this->a*$this->a;

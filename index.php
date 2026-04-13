@@ -21,6 +21,9 @@ class Rectangle extends Figure implements IFigure {
     public function infoAbout() {
         echo "rectangle<br>";
     }
+    public function getArea() {
+        return $this->a*$this->b;
+    }
 };
 class Triangle extends Figure implements IFigure {
     public function __construct(private $a, private $b, private $c)
@@ -33,6 +36,10 @@ class Triangle extends Figure implements IFigure {
     public function infoAbout() {
         echo "triangle<br>";
     }
+    public function getArea() {
+        $p = ($this->a+$this->b+$this->c)/2;
+        return sqrt($p*($p-$this->a)*($p-$this->b)*($p-$this->c));
+    }
 };
 class Square extends Figure implements IFigure {
     public function __construct(private $a)
@@ -42,6 +49,9 @@ class Square extends Figure implements IFigure {
     }
     public function infoAbout() {
         echo "square<br>";
+    }
+    public function getArea() {
+        return $this->a*$this->a;
     }
 };
 

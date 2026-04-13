@@ -7,19 +7,19 @@ class Page {
         $this->name = "page";
         $this->template = '<div class="hero">
                 <h1>🐾 Лапы, усы и хвост 🐾</h1>
-                <p>Всё о жизни кошек: от утренней йоги до секретов мурчания. Уютный блог для ценителей кошачьей гармонии.</p>
+                <p>Два мира — одна любовь. Всё о жизни кошек и собак: от привычек до секретов воспитания.</p>
             </div>
 
             <div class="features">
                 <div class="feature-item">
                     <div class="feature-icon">😻</div>
                     <h3>100+ историй</h3>
-                    <p>Забавные случаи, лайфхаки по уходу и наблюдения за кошачьими привычками.</p>
+                    <p>Забавные случаи, лайфхаки по уходу и наблюдения за привычками питомцев.</p>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon">📚</div>
-                    <h3>Кошачья психология</h3>
-                    <p>Узнайте, почему кошки мурлычат, прячутся в коробках и любят высоту.</p>
+                    <h3>Психология животных</h3>
+                    <p>Узнайте, почему кошки мурлычат, а собаки ходят за вами по пятам.</p>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon">🏆</div>
@@ -103,7 +103,61 @@ class DogBlogPage extends Page {
     public function __construct() {
         $this->name = "catBlog";
         
-        $this->template = '';
+        $this->template = '<div style="text-align: center; margin: 1rem 0 0.5rem;">
+                <h1 style="font-size: 2rem; color: #422f1e;">📌 Наши статьи о собаках</h1>
+                <p style="color: #936e46;">Уютные заметки, факты и личный опыт</p>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-media" style="background: #e6d5b8; background-image: linear-gradient(135deg, #f9e7c2 0%, #eed9b0 100%); font-size: 72px;">
+                        🐶👃
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Собачий нос — цифровой детектор</h3>
+                        <div class="card-subtitle">наука & факты</div>
+                        <p class="card-text">У собак более 300 миллионов обонятельных рецепторов (у людей — около 6 миллионов). Они могут учуять запах, который был оставлен несколько часов назад, и даже определять эмоции человека по запаху пота.</p>
+                        <div class="card-footer">
+                            <span>📅 13 апр 2026</span>
+                            <span>🐾 2 мин чтения</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-media" style="background: #d9e0d5; background-image: linear-gradient(145deg, #ebe3cd, #dbd0b8); font-size: 68px;">
+                        🐕💬🔁
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Язык хвоста и ушей</h3>
+                        <div class="card-subtitle">поведение & жесты</div>
+                        <p class="card-text">Виляние хвостом вправо — радость и спокойствие, влево — настороженность. Прижатые уши + поджатый хвост = страх или неуверенность. А медленное виляние с расслабленным телом — знак дружелюбия.</p>
+                        <div class="card-footer">
+                            <span>📅 08 апр 2026</span>
+                            <span>🐾 3 мин чтения</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-media" style="background: #eeddcc; background-image: linear-gradient(120deg, #f5e5cf, #f2dec2); font-size: 70px;">
+                        🐕🧠
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Собаки понимают до 250 слов</h3>
+                        <div class="card-subtitle">наука & факты</div>
+                        <p class="card-text">Интеллект собак сравним с умственными способностями двухлетнего ребёнка. Бордер-колли и пудели способны запоминать более 250 команд и жестов. Некоторые собаки могут решать простые логические задачи.</p>
+                        <div class="card-footer">
+                            <span>📅 28 мар 2026</span>
+                            <span>🐾 2 мин чтения</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    <div class="footer">
+        🐾 Блог о жизни кошек. 2026 🐾
+    </div>';
 }
 }
 ?>
@@ -296,6 +350,20 @@ body {
     box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     border: none;
     cursor: pointer;
+    margin: 10px
+}
+.btn-secondary {
+    display: inline-block;
+    background: #423113;
+    color: #fdefd8;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 60px;
+    font-weight: 400;
+    font-size: 0.8rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    border: none;
+    cursor: pointer;
     margin: 10px 10px 20px 10px;
 }
 
@@ -376,8 +444,11 @@ body {
 <body>
 
     <h1>Вы кошатница или собачница?</h1>
-    <a href="?page=catBlog" class="btn">Кошатница</a>
-    <a href="?page=dogBlog" class="btn">Собачница</a>
+    <div>
+        <a href="?page=catBlog" class="btn">Кошатница</a>
+        <a href="?page=dogBlog" class="btn">Собачница</a>
+    </div>
+    <a href="?page=main" class="btn-secondary">Вернуться на главную</a>
     <hr>
 
     <?php
@@ -390,7 +461,11 @@ body {
         } elseif ($pageValue === 'dogBlog') {
             $page = new DogBlogPage();
             $page->render();
-        } else {
+        } elseif ($pageValue === 'main') {
+            $page = new Page();
+            $page->render();
+        }
+        else {
             echo "<p style='color: red;'>Ошибка: страница '{$pageValue}' не найдена. Используйте 'catBlog' или 'dogBlog'.</p>";
             }
     } else {

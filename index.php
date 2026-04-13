@@ -55,3 +55,18 @@ class Square extends Figure implements IFigure {
     }
 };
 
+$sq1 = new Square(5);
+$sq2 = new Square(4.7);
+$tr1 = new Triangle(9, 4, 6);
+$tr2 = new Triangle(8.1, 4.3, 5);
+$re1 = new Rectangle(10, 9.2);
+$re2 = new Rectangle(22.8, 115);
+
+echo "площадь первого квадрата - " . $sq1->getArea() . "<br>";
+echo "площадь второго квадрата - " . $sq2->getArea() . "<br>";
+echo "площадь первого треугольника - " . $tr1->getArea() . "<br>";
+echo "площадь второго треугольника - " . $tr2->getArea() . "<br>";
+echo "площадь первого прямоугольника - " . $re1->getArea() . "<br>";
+echo "площадь второго прямоугольника - " . $re2->getArea() . "<br>";
+
+

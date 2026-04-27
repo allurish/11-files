@@ -1,0 +1,287 @@
+/* Базовые стили и палитра */
+:root {
+    --cream: #FFF9F0;
+    --soft-pink: #F4C2C2;
+    --soft-green: #C1D5A4;
+    --caramel: #F0D98A;
+    --dark-text: #4A4A4A;
+    --light-text: #7A7A7A;
+    --white: #FFFFFF;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--cream);
+    color: var(--dark-text);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    width: 90%;
+}
+
+/* Шапка и навигация */
+header {
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.logo span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--soft-green);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--dark-text);
+    font-weight: 500;
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+nav ul li a:hover {
+    color: var(--soft-pink);
+    border-bottom-color: var(--caramel);
+}
+
+nav ul li a.active {
+    color: var(--soft-pink);
+    font-weight: bold;
+    border-bottom-color: var(--soft-pink);
+}
+
+/* Заголовки */
+h1 {
+    color: var(--soft-green);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+h2 {
+    color: var(--dark-text);
+    margin: 1.5rem 0 1rem;
+    font-size: 1.5rem;
+}
+
+/* Сетка для фотографий */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.photo-card {
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.photo-card:hover {
+    transform: translateY(-5px);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.photo-card .caption {
+    padding: 0.8rem;
+    text-align: center;
+    color: var(--light-text);
+    font-size: 0.9rem;
+}
+
+/* Карточка контактов (на about.php) */
+.contact-info {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 16px;
+    margin: 1.5rem 0;
+    box-shadow: var(--shadow);
+}
+
+.contact-info p {
+    margin: 0.8rem 0;
+}
+
+.contact-info strong {
+    color: var(--soft-green);
+}
+
+/* Псевдо-карта */
+.pseudo-map {
+    background: linear-gradient(135deg, var(--soft-green) 0%, var(--caramel) 100%);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    color: var(--dark-text);
+    margin: 1.5rem 0;
+    font-weight: bold;
+    box-shadow: var(--shadow);
+}
+
+.pseudo-map span {
+    display: inline-block;
+    background: var(--white);
+    padding: 0.3rem 1rem;
+    border-radius: 30px;
+    font-size: 0.9rem;
+}
+
+/* Форма */
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #E8DCC8;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: 0.2s;
+    background-color: var(--white);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--soft-pink);
+    box-shadow: 0 0 0 2px rgba(244, 194, 194, 0.2);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+button[type="submit"] {
+    background-color: var(--soft-green);
+    color: var(--dark-text);
+    border: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--caramel);
+    transform: scale(1.02);
+}
+
+/* Сообщение после отправки */
+.message-success {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--soft-green);
+}
+
+.message-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    border-left: 4px solid #f5c6cb;
+}
+
+/* Подвал */
+footer {
+    background-color: var(--white);
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+    color: var(--light-text);
+    font-size: 0.9rem;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    nav ul {
+        gap: 1.5rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    main {
+        padding: 1rem;
+        width: 95%;
+    }
+    
+    h1 {
+        font-size: 1.6rem;
+    }
+    
+    .photo-grid {
+        gap: 1rem;
+    }
+}

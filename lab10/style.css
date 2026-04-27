@@ -1,0 +1,9 @@
+div {
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+}
+body {
+    background-color: rgb(236, 206, 212);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}

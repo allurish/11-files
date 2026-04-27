@@ -12,7 +12,7 @@ $menuItems = [
 <header>
     <nav>
         <div class="logo">
-            <img src="/assets/images/logo.png" alt="Логотип фермы ягод">
+            <img src="../favicon.png" alt="Логотип фермы ягод">
             <span>BerryFarm</span>
         </div>
         <ul>

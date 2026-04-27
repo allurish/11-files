@@ -1,9 +1,11 @@
 /* Базовые стили и палитра */
+@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 :root {
     --cream: #FFF9F0;
     --soft-pink: #F4C2C2;
-    --soft-green: #C1D5A4;
-    --caramel: #F0D98A;
+    --dark-pink: #d27777;
+    --soft-green: #90A86C;
+    --caramel: #A88143;
     --dark-text: #4A4A4A;
     --light-text: #7A7A7A;
     --white: #FFFFFF;
@@ -17,7 +19,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Shantell Sans", cursive;
     background-color: var(--cream);
     color: var(--dark-text);
     line-height: 1.6;
@@ -56,19 +58,20 @@ nav {
 
 .logo {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 0.5rem;
 }
 
 .logo img {
-    height: 40px;
+    height: 50px;
     width: auto;
 }
 
 .logo span {
-    font-size: 1.2rem;
+    font-size: 1.7rem;
     font-weight: bold;
     color: var(--soft-green);
+    margin-top: 8px;
 }
 
 nav ul {
@@ -90,13 +93,13 @@ nav ul li a {
 
 nav ul li a:hover {
     color: var(--soft-pink);
-    border-bottom-color: var(--caramel);
+    border-bottom-color: var(--dark-pink);
 }
 
 nav ul li a.active {
-    color: var(--soft-pink);
+    color: var(--dark-pink);
     font-weight: bold;
-    border-bottom-color: var(--soft-pink);
+    border-bottom-color: var(--dark-pink);
 }
 
 /* Заголовки */
@@ -162,6 +165,9 @@ h2 {
 .contact-info strong {
     color: var(--soft-green);
 }
+.about-col a {
+    color: var(--caramel);
+}
 
 /* Псевдо-карта */
 .pseudo-map {
@@ -214,7 +220,7 @@ h2 {
 
 button[type="submit"] {
     background-color: var(--soft-green);
-    color: var(--dark-text);
+    color: var(--white);
     border: none;
     padding: 0.8rem 1.8rem;
     border-radius: 30px;
@@ -259,6 +265,35 @@ footer {
     box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
 }
 
+/* Сетка для страницы "О нас" — две колонки */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+    align-items: start;
+}
+
+.about-col {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.about-col h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.about-col .photo-card {
+    margin: 0;
+}
+
+.about-col .photo-card img {
+    height: 250px;
+}
+
 /* Адаптивность */
 @media (max-width: 768px) {
     nav {
@@ -282,6 +317,11 @@ footer {
     }
     
     .photo-grid {
+        gap: 1rem;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
         gap: 1rem;
     }
 }
